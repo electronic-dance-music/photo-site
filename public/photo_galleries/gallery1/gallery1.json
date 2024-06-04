@@ -1,0 +1,26 @@
+[
+    {
+        "type": "photo",
+        "image": "p1.png",
+        "title": "Photo Title 1",
+        "row": "single"
+    },
+    {
+        "type": "photo",
+        "image": "p2.png",
+        "title": "Photo Title 2",
+        "row": "half"
+    },
+    {
+        "type": "text",
+        "title": "Text Title",
+        "paragraphs": ["Paragraph 1.", "Paragraph 2."],
+        "row": "half"
+    },
+    {
+        "type": "photo",
+        "image": "p3.jpg",
+        "title": "Photo Title 3",
+        "row": "single"
+    }
+]
