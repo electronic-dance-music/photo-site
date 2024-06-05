@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/lizzie-photography">
+    <BrowserRouter basename="/photo-site">
       <Provider store={store}>
         <App />
       </Provider>

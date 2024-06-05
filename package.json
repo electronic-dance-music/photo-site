@@ -1,5 +1,5 @@
 {
-  "name": "lizzie-photography",
+  "name": "photo-site",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -58,5 +58,5 @@
   "devDependencies": {
     "gh-pages": "^6.1.1"
   },
-  "homepage": "https://acm1264.github.io/lizzie-photography"
+  "homepage": "https://electronic-dance-music.github.io/photo-site/"
 }
