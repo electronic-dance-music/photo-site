@@ -2,8 +2,6 @@
 
 Site created for hosting Lizzie's photo portfolio.  
 
-
-
 ## How to update website
 To update the website, you can add photos, text, etc. all in the 'public' folder, then run some commands to get the website ready and online.
 
@@ -28,39 +26,23 @@ Example:
 
 Once the gallery is opened, the .json file inside its folder will be used (ex: clicking on the image in the above example for A&E wedding will trigger using 'avereigh_ethan_wedding.json').
 
-NEED TO ADD FOOTER
+
 ...................................ADD HOW TO FORMAT THIS FILE
 
 
+## TODO
+- Add footer across the site
+- update the navbar to have photo icon
+- update favicon tiny icon
+- add contents to home page
+- add contents to about page
+- finish readme walkthrough of how to make changes
 
 
 
+## Making the Website Live
 
+Make sure to make code changes in the main branch. Once done, you can commit and push those changes, then run the following commands to get the website ready then deploy it online (which will modify the gh-pages branch of the repo):
 
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm run build`
+`npm run deploy`
