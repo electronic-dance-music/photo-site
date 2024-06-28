@@ -10,4 +10,5 @@ export const ImageGalleryMasterContainer = styled.div`
 
 export const ImageGalleryImage = styled.img`
     width: 49%;
+    max-height: 1vh;
 `

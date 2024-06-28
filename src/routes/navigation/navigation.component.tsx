@@ -1,4 +1,4 @@
-import { NavigationContainer, NavigationLink, NavigationLinkContainer, BelowNavigationContainer, NavigationHamburger, NavigationLogoImage } from "./navigation.styles";
+import { NavigationContainer, NavigationLink, NavigationLinkContainer, BelowNavigationContainer, NavigationHamburger, NavigationLogoImage, NavTitleText } from "./navigation.styles";
 import { Fragment, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { INavigationSection, NavigationSections } from "./navigation.sections";
@@ -30,7 +30,8 @@ const Navigation = () => {
                 {/* hamburger menu for smaller displays to compress the nav */}
                 <NavigationHamburger onClick={toggleMobileNavVisibility}><Icon name={mobileNavIsVisible ? "times" : "bars"} /></NavigationHamburger>
 
-                <NavigationLogoImage src={`${process.env.PUBLIC_URL}/images/x.png`} centered ui={true} />
+                {/* <NavigationLogoImage src={`${process.env.PUBLIC_URL}/images/x.png`} centered ui={true} /> */}
+                <NavTitleText>Lizzie Miller</NavTitleText>
 
                 <NavigationLinkContainer mobileNavVisible={mobileNavIsVisible} side="l">
                     {NavigationSections

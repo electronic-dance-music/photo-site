@@ -26,3 +26,10 @@ export const NameContainer = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+export const GoogleForm = styled.iframe`
+  width: 100%;
+  max-width: 730px;
+  height: 100vh;
+  border: none;
+`

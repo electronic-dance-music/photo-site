@@ -13,6 +13,13 @@ interface INavigationLinkProps
     mobileNavVisible?:Boolean
 }
 
+export const NavTitleText = styled.h1`
+    padding-right: 20px;
+    padding-left: 10px;
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-size: 30px;
+`
+
 
 export const NavigationHamburger = styled.div`
     display: none;
@@ -86,7 +93,7 @@ export const NavigationLinkContainer = styled.div<INavigationLinkProps>`
         flex-direction: column;
         align-items: center;
         width: 100%;
-        height: 600px;
+        height: 100vh;
         position: absolute;
         top: ${props => props.side === "l" ? "50px" : "250px"};
 

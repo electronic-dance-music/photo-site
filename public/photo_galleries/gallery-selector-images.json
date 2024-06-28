@@ -1,8 +1,15 @@
 [
     {
-        "folder": "gallery1",
-        "coverImage": "p1.png",
-        "title": "My First photo shoot"
+        "folder": "andy+jodie",
+        "coverImage": "Andy Jodie Ring POProsal-3.jpg",
+        "title": "Andy + Jodie",
+        "subtitle": "Baton Rouge, LA"
+    },
+    {
+        "folder": "marie+miley",
+        "coverImage": "Marie_and_Miley-22.jpg",
+        "title": "Marie + Miley",
+        "subtitle": "Baton Rouge, LA"
     },
     {
         "folder": "oatmeal",
@@ -11,8 +18,9 @@
         "subtitle": "Albany, LAAAAAAAAAAA"
     },
     {
-        "folder": "oatmeal",
-        "coverImage": "que.jpg",
-        "title": "Classic oats!"
+        "folder": "gallery1",
+        "coverImage": "p1.png",
+        "title": "the og gooms!",
+        "subtitle": "Albany, LAAAAAAAAAAA"
     }
 ]

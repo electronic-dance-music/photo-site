@@ -40,6 +40,21 @@ Once the gallery is opened, the .json file inside its folder will be used (ex: c
 
 
 
+
+- have two landscape photos take up one of the halves (multipel photos in a single entry?)
+- have it so rows are centered
+
+
+- restrucutre json s.t. it is 2D array where the outer indexes are rows and inner are columns
+- gallery selector ljsutify content center and shrink somewhat, plus add texts
+
+- look into if it is secure to do email thing
+
+
+- low priority possible feature clickking on image to make it fully visible on screen
+
+
+
 ## Making the Website Live
 
 Make sure to make code changes in the main branch. Once done, you can commit and push those changes, then run the following commands to get the website ready then deploy it online (which will modify the gh-pages branch of the repo):
