@@ -1,114 +1,110 @@
 {
     "format": "columns",
     "contents": [
-        [
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-3.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-7.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-12.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-15.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-17.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-20.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-22.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-28.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-30.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-61.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-64.jpg",
-                "title": "Marie and Miley"
-            }
-        ],
-        [
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-33.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-40.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-42.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-46.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-47.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-53.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-54.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-55.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-57.jpg",
-                "title": "Marie and Miley"
-            },
-            {
-                "type": "photo",
-                "image": "Marie_and_Miley-60.jpg",
-                "title": "Marie and Miley"
-            }
-        ]
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-3.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-20.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-12.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-15.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-17.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-7.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-22.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-28.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-30.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-61.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-64.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-33.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-40.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-42.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-46.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-47.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-53.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-54.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-55.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-57.jpg",
+            "title": "Marie and Miley"
+        },
+        {
+            "type": "photo",
+            "image": "Marie_and_Miley-60.jpg",
+            "title": "Marie and Miley"
+        }
     ]
 }

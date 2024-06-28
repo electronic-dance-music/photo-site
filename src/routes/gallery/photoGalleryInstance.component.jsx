@@ -6,7 +6,7 @@ const GalleryContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 10px; /* Reduced gap */
 `;
 
 const RowContainer = styled.div`
@@ -14,26 +14,17 @@ const RowContainer = styled.div`
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
-    margin-bottom: 10px;
-    min-height: 250px;
+    margin-bottom: 10px; /* Adjusted margin */
+    min-height: 250px; /* Adjust the minimum height of each row as needed */
 `;
-
-const ColumnContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: calc(100% / 2); /* Assuming 2 columns */
-    justify-content: space-evenly;
-`;
-
 
 const ItemContainer = styled.div`
-    flex: 1 1 45%;
-    max-width: 45%;
+    flex: 1 1 45%; /* Increased flex basis */
+    max-width: 45%; /* Increased max-width */
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 
     @media (max-width: 800px) {
         flex: 1 1 100%;
@@ -73,86 +64,184 @@ const StyledText = styled.div`
 `;
 
 const PhotoGalleryInstance = () => {
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+        setIsMobile(window.innerWidth < 768); // Example breakpoint for mobile
+        };
+
+        // Initial setup
+        handleResize();
+
+        // Listen to window resize events
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup listener on component unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+
+
     const { folderName } = useParams();
-    const [format, setFormat] = useState('rows');
-    const [contents, setContents] = useState([]);
+    const [galleryData, setGalleryData] = useState({ format: "rows", contents: [] });
 
     useEffect(() => {
         fetch(`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${folderName}.json`)
             .then(response => response.json())
-            .then(data => {
-                setFormat(data.format);
-                setContents(data.contents);
-            })
+            .then(data => setGalleryData(data))
             .catch(error => console.error('Error fetching gallery content:', error));
     }, [folderName]);
 
-    const renderRow = (row) => (
-        <RowContainer>
-            {row.map((item, itemIndex) => (
-                <ItemContainer key={itemIndex}>
-                    {item.type === 'photo' && (
-                        <StyledImage src={`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${item.image}`} alt={item.title} />
-                    )}
-                    {item.type === 'stacked' && (
-                        <StackedImagesContainer>
-                            {item.images.map((image, idx) => (
-                                <StyledImage key={idx} src={`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${image}`} alt={item.title} />
-                            ))}
-                        </StackedImagesContainer>
-                    )}
-                    {item.type === 'text' && (
-                        <StyledText>
-                            <h3>{item.title}</h3>
-                            {item.paragraphs.map((paragraph, idx) => (
-                                <p key={idx}>{paragraph}</p>
-                            ))}
-                        </StyledText>
-                    )}
-                </ItemContainer>
+    const renderRowFormat = () => (
+        <GalleryContainer>
+            {galleryData.contents.map((row, rowIndex) => (
+                <RowContainer key={rowIndex}>
+                    {row.map((item, itemIndex) => (
+                        <ItemContainer key={itemIndex}>
+                            {item.type === 'photo' && (
+                                <StyledImage src={`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${item.image}`} alt={item.title} />
+                            )}
+                            {item.type === 'stacked' && (
+                                <StackedImagesContainer>
+                                    {item.images.map((image, idx) => (
+                                        <StyledImage key={idx} src={`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${image}`} alt={item.title} />
+                                    ))}
+                                </StackedImagesContainer>
+                            )}
+                            {item.type === 'text' && (
+                                <StyledText>
+                                    <h3>{item.title}</h3>
+                                    {item.paragraphs.map((paragraph, idx) => (
+                                        <p key={idx}>{paragraph}</p>
+                                    ))}
+                                </StyledText>
+                            )}
+                        </ItemContainer>
+                    ))}
+                </RowContainer>
             ))}
-        </RowContainer>
+        </GalleryContainer>
     );
 
-    const renderColumn = (column) => (
-        <ColumnContainer>
-            {column.map((item, itemIndex) => (
-                <ItemContainer key={itemIndex}>
-                    {item.type === 'photo' && (
-                        <StyledImage src={`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${item.image}`} alt={item.title} />
-                    )}
-                    {item.type === 'stacked' && (
-                        <StackedImagesContainer>
-                            {item.images.map((image, idx) => (
-                                <StyledImage key={idx} src={`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${image}`} alt={item.title} />
-                            ))}
-                        </StackedImagesContainer>
-                    )}
-                    {item.type === 'text' && (
-                        <StyledText>
-                            <h3>{item.title}</h3>
-                            {item.paragraphs.map((paragraph, idx) => (
-                                <p key={idx}>{paragraph}</p>
-                            ))}
-                        </StyledText>
-                    )}
-                </ItemContainer>
-            ))}
-        </ColumnContainer>
+    const ColumnContainer = styled.div`
+        display: flex;
+        justify-content: space-between;
+        width: 92%;
+    `;
+
+    const ColumnItemContainer = styled.div`
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Adjust the vertical gap between photos */
+        align-items: center;
+        width: 49%;
+
+        @media (max-width: 600px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+    `;
+
+    const renderColumnFormat = () => (
+        <GalleryContainer>
+            <ColumnContainer>
+                {/* Render single column on smaller screens */}
+                {isMobile && (<ColumnItemContainer>
+                    {galleryData.contents.map((item, itemIndex) => (
+                        <div key={itemIndex}>
+                            {item.type === 'photo' && (
+                                <StyledImage src={`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${item.image}`} alt={item.title} />
+                            )}
+                            {item.type === 'stacked' && (
+                                <StackedImagesContainer>
+                                    {item.images.map((image, idx) => (
+                                        <StyledImage key={idx} src={`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${image}`} alt={item.title} />
+                                    ))}
+                                </StackedImagesContainer>
+                            )}
+                            {item.type === 'text' && (
+                                <StyledText>
+                                    <h3>{item.title}</h3>
+                                    {item.paragraphs.map((paragraph, idx) => (
+                                        <p key={idx}>{paragraph}</p>
+                                    ))}
+                                </StyledText>
+                            )}
+                        </div>
+                    ))}
+                </ColumnItemContainer>)}
+                {/* Render two independent columns on larger screens */}
+                {!isMobile && (<ColumnItemContainer>
+                    {galleryData.contents.map((item, itemIndex) => {
+                        if (itemIndex % 2 === 0) {
+                            return (
+                                <div key={itemIndex}>
+                                    {item.type === 'photo' && (
+                                        <StyledImage src={`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${item.image}`} alt={item.title} />
+                                    )}
+                                    {item.type === 'stacked' && (
+                                        <StackedImagesContainer>
+                                            {item.images.map((image, idx) => (
+                                                <StyledImage key={idx} src={`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${image}`} alt={item.title} />
+                                            ))}
+                                        </StackedImagesContainer>
+                                    )}
+                                    {item.type === 'text' && (
+                                        <StyledText>
+                                            <h3>{item.title}</h3>
+                                            {item.paragraphs.map((paragraph, idx) => (
+                                                <p key={idx}>{paragraph}</p>
+                                            ))}
+                                        </StyledText>
+                                    )}
+                                </div>
+                            );
+                        }
+                        return null;
+                    })}
+                </ColumnItemContainer>)}
+                {!isMobile && (<ColumnItemContainer>
+                    {galleryData.contents.map((item, itemIndex) => {
+                        if (itemIndex % 2 !== 0) {
+                            return (
+                                <div key={itemIndex}>
+                                    {item.type === 'photo' && (
+                                        <StyledImage src={`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${item.image}`} alt={item.title} />
+                                    )}
+                                    {item.type === 'stacked' && (
+                                        <StackedImagesContainer>
+                                            {item.images.map((image, idx) => (
+                                                <StyledImage key={idx} src={`${process.env.PUBLIC_URL}/photo_galleries/${folderName}/${image}`} alt={item.title} />
+                                            ))}
+                                        </StackedImagesContainer>
+                                    )}
+                                    {item.type === 'text' && (
+                                        <StyledText>
+                                            <h3>{item.title}</h3>
+                                            {item.paragraphs.map((paragraph, idx) => (
+                                                <p key={idx}>{paragraph}</p>
+                                            ))}
+                                        </StyledText>
+                                    )}
+                                </div>
+                            );
+                        }
+                        return null;
+                    })}
+                </ColumnItemContainer>)}
+            </ColumnContainer>
+        </GalleryContainer>
     );
 
     return (
-        <GalleryContainer>
-            {format === 'rows'
-                ? contents.map((row, rowIndex) => (
-                      <React.Fragment key={rowIndex}>{renderRow(row)}</React.Fragment>
-                  ))
-                : contents[0].map((_, colIndex) => (
-                      <React.Fragment key={colIndex}>
-                          {renderColumn(contents.map(row => row[colIndex]).filter(Boolean))}
-                      </React.Fragment>
-                  ))}
-        </GalleryContainer>
+        <>
+            {galleryData.format === "rows" && renderRowFormat()}
+            {galleryData.format === "columns" && renderColumnFormat()}
+        </>
     );
 };
 
