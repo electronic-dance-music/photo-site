@@ -1,0 +1,46 @@
+{
+    "format": "rows",
+    "contents": [
+        [
+            {
+                
+                "type": "photo",
+                "image": "Andy Jodie Ring POProsal-3.jpg",
+                "title": "Andy + Jodie"
+            },
+            {
+                "type": "stacked",
+                "images": ["Andy Jodie Ring POProsal-13.jpg", "Andy Jodie Ring POProsal-13.jpg"]
+            }
+        ],
+        [
+            {
+                "type": "photo",
+                "image": "Andy Jodie Ring POProsal-13.jpg",
+                "title": "Andy + Jodie"
+            },
+            {
+                "type": "photo",
+                "image": "Andy Jodie Ring POProsal-17.jpg",
+                "title": "Andy + Jodie"
+            }
+        ],
+        [
+            {
+                "type": "text",
+                "title": "Text Title",
+                "paragraphs": ["Paragraph 1.", "Paragraph 2."]
+            },
+            {
+                "type": "photo",
+                "image": "Andy Jodie Ring POProsal-17.jpg",
+                "title": "Andy + Jodie"
+            },
+            {
+                "type": "photo",
+                "image": "Andy Jodie Ring POProsal-17.jpg",
+                "title": "Andy + Jodie"
+            }
+        ]
+    ]
+}
