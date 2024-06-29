@@ -7,7 +7,8 @@ const GalleryContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap: 10px;
 `;
 
 const PhotoContainer = styled.div`
@@ -20,19 +21,58 @@ const PhotoContainer = styled.div`
         flex: 1 1 95%; /* Set the width to 95% on smaller screens */
         max-width: 95%; /* Limit the width of each item to 95% */
     }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: inherit; /* Ensure the link text inherits the color and doesn't change */
+
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
 `;
 
 const StyledImage = styled.img`
     width: 100%;
-    height: auto;
+    height: auto; /* Allow images to have different heights */
+    max-height: 100vh;
+    object-fit: cover; /* Ensure the image covers the entire area */
     border-radius: 2px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 
     &:hover {
-        transform: scale(1.05);
+        transform: scale(1.02); /* Reduced scale effect */
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         filter: brightness(1.1);
+    }
+
+    @media (max-width: 800px) {
+        max-height: 200vh;
+    }
+`;
+
+const GalleryInfo = styled.div`
+    margin-top: 10px;
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+
+    h2 {
+        font-family: Garamond, Georgia, 'Times New Roman', serif;
+        font-size: clamp(23px, 4vw, 27px);
+        margin: 5px 0;
+    }
+
+    p {
+        font-family: Garamond, Georgia, 'Times New Roman', serif;
+        font-size: clamp(16px, 3vw, 20px);
+        margin: 0;
+        color: #949494;
     }
 `;
 
@@ -44,16 +84,20 @@ const TopText = styled.div`
 
     font-size: clamp(14px, 4vw, 18px);
 
-    h1{
+    h1 {
         font-family: Garamond, Georgia, 'Times New Roman', serif;
         font-size: clamp(36px, 4vw, 40px);
     }
-`
+`;
 
 const PhotoGalleryLink = ({ gallery }) => (
-    <Link to={`/gallery/${gallery.folder}`}>
+    <StyledLink to={`/gallery/${gallery.folder}`}>
         <StyledImage src={`${process.env.PUBLIC_URL}/photo_galleries/${gallery.folder}/${gallery.coverImage}`} alt={gallery.title} />
-    </Link>
+        <GalleryInfo>
+            <h2>{gallery.title}</h2>
+            <p>{gallery.subtitle}</p>
+        </GalleryInfo>
+    </StyledLink>
 );
 
 const PhotoGallerySelector = () => {

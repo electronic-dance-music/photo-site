@@ -2,6 +2,21 @@
 
 Site created for hosting Lizzie's photo portfolio.  
 
+
+## Making the Website Live
+### RUN LOCALLY: 
+Open terminal (probably linux subsystem for windows) and in the root directry of the project, run
+- `npm install`
+- `npm start`
+
+### GO LIVE ON INTERNET 
+Make sure to make code changes in the main branch. Once done, you can commit and push those changes, then run the following commands to get the website ready then deploy it online (which will modify the gh-pages branch of the repo):
+
+`npm run build`
+`npm run deploy`
+
+
+
 ## How to update website
 To update the website, you can add photos, text, etc. all in the 'public' folder, then run some commands to get the website ready and online.
 
@@ -55,9 +70,3 @@ Once the gallery is opened, the .json file inside its folder will be used (ex: c
 
 
 
-## Making the Website Live
-
-Make sure to make code changes in the main branch. Once done, you can commit and push those changes, then run the following commands to get the website ready then deploy it online (which will modify the gh-pages branch of the repo):
-
-`npm run build`
-`npm run deploy`
