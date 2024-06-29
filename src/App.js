@@ -7,20 +7,24 @@ import About from './routes/about/about.component';
 import Contact from './routes/contact/contact.component';
 import PhotoGallerySelector from './routes/gallery/photoGallerySelector.component';
 import PhotoGalleryInstance from './routes/gallery/photoGalleryInstance.component';
+import Footer from './routes/navigation/footer.component'; // Import Footer
 
 const App = () => {
   return (
-    <Routes>
-      <Route path='/' element={<Navigation />}>
-        <Route index element={<Home />} />
-        <Route path='about' element={<About />} />
-        <Route path='contact' element={<Contact />} />
-        <Route path="gallery/*">
-          <Route index element={<PhotoGallerySelector />} />
-          <Route path=":folderName" element={<PhotoGalleryInstance />} />
+    <div className="App">
+      <Routes>
+        <Route path='/' element={<Navigation />}>
+          <Route index element={<Home />} />
+          <Route path='about' element={<About />} />
+          <Route path='contact' element={<Contact />} />
+          <Route path="gallery/*">
+            <Route index element={<PhotoGallerySelector />} />
+            <Route path=":folderName" element={<PhotoGalleryInstance />} />
+          </Route>
         </Route>
-      </Route>
-    </Routes>
+      </Routes>
+      <Footer /> {/* Add Footer */}
+    </div>
   );
 }
 

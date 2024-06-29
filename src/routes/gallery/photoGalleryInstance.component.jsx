@@ -2,6 +2,24 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 
+const TopTextInstance = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+
+    font-size: clamp(14px, 4vw, 18px);
+
+    h1 {
+        font-family: Garamond, Georgia, 'Times New Roman', serif;
+        font-size: clamp(36px, 4vw, 40px);
+    }
+    h2 {
+        font-family: Garamond, Georgia, 'Times New Roman', serif;
+        font-size: clamp(22px, 4vw, 26px);
+    }
+`;
+
 const GalleryContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -239,6 +257,11 @@ const PhotoGalleryInstance = () => {
 
     return (
         <>
+            <TopTextInstance>
+                <h1>{galleryData.title}</h1>
+                <h2>{galleryData.subtitle}</h2>
+                {galleryData.description && galleryData.description.map((text, textIndex) => (<p>{text}</p>))}
+            </TopTextInstance>
             {galleryData.format === "rows" && renderRowFormat()}
             {galleryData.format === "columns" && renderColumnFormat()}
         </>
