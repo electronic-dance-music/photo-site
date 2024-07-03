@@ -50,7 +50,7 @@ const Contact = () => {
   return (
     <ContactContainer>
       <h2>Contact Me</h2>
-      <p>Interested in booking a session? Please fill out the Google Form below and I'll be sure to get back to you as soon as possible!</p>
+      <p>Have an event you want to remember forever? Whether it's a wedding, engagement, family Christmas photos, or just for fun, let's make it happen! Fill out the form below or shoot me an email at elizabethmdenham@gmail.com and let's chat!</p>
 
       <GoogleForm src="https://docs.google.com/forms/d/e/1FAIpQLSeQpB3OLiLl9gZ_zJ26zd3iVWqvtsOLpsLSXKI-ir_mvZ0RPg/viewform?embedded=true" 
               // width="640" 

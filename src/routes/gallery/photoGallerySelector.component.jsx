@@ -2,6 +2,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { HorizontalLine } from '../../styles/globalstyles.styles';
 
 const GalleryContainer = styled.div`
     display: flex;
@@ -115,6 +116,7 @@ const PhotoGallerySelector = () => {
             <TopText>
                 <h1>Sessions</h1>
                 <p>Click a photo to see more highlights!</p>
+                <HorizontalLine lineWidth='90%' />
             </TopText>
             <GalleryContainer>
                 {galleries.map((gallery, index) => (

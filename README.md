@@ -229,8 +229,6 @@ EXAMPLE: the photos on the left are even numbered starting with 0, so Marie_and_
 - fix load times for images on column view (load based on what is visible?) (may be issue with file sizes too large)
 
 
-
-- update favicon tiny icon
 - add contents to home page
 - add contents to about page
 

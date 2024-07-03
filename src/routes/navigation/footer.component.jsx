@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUp, faHome } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const FooterContainer = styled.footer`
     background: linear-gradient(90deg, #ffffff 0%, #f5f5f5 50%, #dcdcdc 100%);
@@ -11,15 +12,26 @@ const FooterContainer = styled.footer`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allow flex items to wrap */
+    
+    @media (max-width: 800px) {
+        flex-direction: column;
+        text-align: center;
+    }
 `;
 
 const FooterText = styled.p`
     margin: 0;
+
+    @media (max-width: 800px) {
+        margin-bottom: 10px;
+    }
 `;
 
 const IconLink = styled.a`
     color: #333;
-    margin-left: 10px;
+    margin-left: 15px;
+    margin-right: 9px;
     &:hover {
         color: #e4405f;
     }
@@ -28,26 +40,35 @@ const IconLink = styled.a`
 const ButtonContainer = styled.div`
     display: flex;
     align-items: center;
+
+    @media (max-width: 800px) {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
 `;
 
-const BackToTopButton = styled.button`
-    margin-left: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #333;
-    color: #fff;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-        background-color: #555;
-    }
-
+const IconButton = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #333;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #555;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    & + & {
+        margin-left: 10px; /* Add space between the buttons */
+    }
 `;
 
 const scrollToTop = () => {
@@ -62,12 +83,15 @@ const Footer = () => {
         <FooterContainer>
             <FooterText>All content &copy; 2024 Lizzie Miller Photography. All rights reserved.</FooterText>
             <ButtonContainer>
+                <IconButton to="/">
+                    <FontAwesomeIcon icon={faHome} />
+                </IconButton>
                 <IconLink href="https://www.instagram.com/lizzie.denim.miller/" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faInstagram} size="2x" />
                 </IconLink>
-                <BackToTopButton onClick={scrollToTop}>
-                    <FontAwesomeIcon icon={faArrowUp} size="lg" />
-                </BackToTopButton>
+                <IconButton as="button" onClick={scrollToTop}>
+                    <FontAwesomeIcon icon={faArrowUp} />
+                </IconButton>
             </ButtonContainer>
         </FooterContainer>
     );
