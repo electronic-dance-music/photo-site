@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/photo-site">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Provider store={store}>
         <App />
       </Provider>
