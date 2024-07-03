@@ -1,59 +1,91 @@
-// home.component.jsx
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HomeContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 20px;
 `;
 
 const PhotoContainer = styled.div`
-    position: relative;
-    width: 100%;
-    max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 33%; /* Adjust width for each photo container */
+  max-width: 350px; /* Maximum width to avoid overflow */
+
+  @media (max-width: 800px) {
+    flex: 1 1 92%; /* Adjusted width for smaller screens */
+    max-width: 92%; /* Adjusted width for smaller screens */
+  }
 `;
 
 const StyledImage = styled.img`
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
-const TextOverlay = styled.div`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 36px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    background-color: rgba(0, 0, 0, 0.3); /* Optional: semi-transparent background for better contrast */
-    padding: 10px;
-    border-radius: 5px;
+const PhotoTitle = styled.div`
+  // margin-top: 10px;
+  font-weight: bold;
+  font-family: Garamond, Georgia, 'Times New Roman', serif;
+  font-size: clamp(36px, 4vw, 40px);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), -1px -1px 1px rgba(255, 255, 255, 0.7), 0 0 2px rgba(0, 0, 0, 0.1); /* Subtle embossed effect */
+`;
+
+const GalleryButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const GalleryButton = styled(Link)`
+  display: block;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-family: Garamond, Georgia, 'Times New Roman', serif;
+  font-size: clamp(22px, 4vw, 26px);
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
 `;
 
 const Home = () => {
-    return (
-        <HomeContainer>
-            <PhotoContainer>
-                <StyledImage src={`${process.env.PUBLIC_URL}/home/candid.jpg`} alt="Candid" />
-                <TextOverlay>Candid</TextOverlay>
-            </PhotoContainer>
-            <PhotoContainer>
-                <StyledImage src={`${process.env.PUBLIC_URL}/home/intimate.jpg`} alt="Intimate" />
-                <TextOverlay>Intimate</TextOverlay>
-            </PhotoContainer>
-            <PhotoContainer>
-                <StyledImage src={`${process.env.PUBLIC_URL}/home/fun.png`} alt="Fun" />
-                <TextOverlay>Fun</TextOverlay>
-            </PhotoContainer>
-        </HomeContainer>
-    );
+  return (
+    <>
+      <HomeContainer>
+        <PhotoContainer>
+          <PhotoTitle>Candid</PhotoTitle>
+          <StyledImage src={`${process.env.PUBLIC_URL}/home/candid.jpg`} alt="Candid" />
+        </PhotoContainer>
+        <PhotoContainer>
+          <PhotoTitle>Intimate</PhotoTitle>
+          <StyledImage src={`${process.env.PUBLIC_URL}/home/intimate.jpg`} alt="Intimate" />
+        </PhotoContainer>
+        <PhotoContainer>
+          <PhotoTitle>Fun</PhotoTitle>
+          <StyledImage src={`${process.env.PUBLIC_URL}/home/fun.jpg`} alt="Fun" />
+        </PhotoContainer>
+      </HomeContainer>
+      <GalleryButtonContainer>
+        <GalleryButton to="/gallery">View Galleries</GalleryButton>
+      </GalleryButtonContainer>
+    </>
+  );
 };
 
 export default Home;
