@@ -1,4 +1,4 @@
-import { NavigationContainer, NavigationLink, NavigationLinkContainer, BelowNavigationContainer, NavigationHamburger, NavigationLogoImage, NavTitleText } from "./navigation.styles";
+import { NavigationContainer, NavigationLink, NavigationLinkContainer, BelowNavigationContainer, NavigationHamburger, NavigationLogoImage, NavTitleText, NavTitleLink } from "./navigation.styles";
 import { Fragment, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { INavigationSection, NavigationSections } from "./navigation.sections";
@@ -31,7 +31,9 @@ const Navigation = () => {
                 <NavigationHamburger onClick={toggleMobileNavVisibility}><Icon name={mobileNavIsVisible ? "times" : "bars"} /></NavigationHamburger>
 
                 {/* <NavigationLogoImage src={`${process.env.PUBLIC_URL}/images/x.png`} centered ui={true} /> */}
-                <NavTitleText>Lizzie Miller</NavTitleText>
+                <NavTitleLink to={'/'}>
+                    <NavTitleText>Lizzie Miller</NavTitleText>
+                </NavTitleLink>
 
                 <NavigationLinkContainer mobileNavVisible={mobileNavIsVisible} side="l">
                     {NavigationSections

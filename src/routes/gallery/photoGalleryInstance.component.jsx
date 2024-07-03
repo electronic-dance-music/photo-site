@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import { HorizontalLine } from "../../styles/globalstyles.styles";
 
 const TopTextInstance = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: Garamond, Georgia, 'Times New Roman', serif;
+    margin-bottom: 15px;
 
     font-size: clamp(14px, 4vw, 18px);
 
@@ -24,7 +26,7 @@ const GalleryContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px; /* Reduced gap */
+    gap: 15px; /* Reduced gap */
 `;
 
 const RowContainer = styled.div`
@@ -32,8 +34,13 @@ const RowContainer = styled.div`
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
-    margin-bottom: 10px; /* Adjusted margin */
+    // margin-bottom: 10px; /* Adjusted margin */
     min-height: 250px; /* Adjust the minimum height of each row as needed */
+    gap: 15px;
+
+    @media (max-width: 800px) {
+        width: 92%;
+    }
 `;
 
 const ItemContainer = styled.div`
@@ -64,6 +71,7 @@ const StackedImagesContainer = styled.div`
     height: 100%;
     width: 100%;
     justify-content: space-between;
+    gap: 15px;
 `;
 
 const StyledText = styled.div`
@@ -87,7 +95,7 @@ const PhotoGalleryInstance = () => {
 
     useEffect(() => {
         const handleResize = () => {
-        setIsMobile(window.innerWidth < 768); // Example breakpoint for mobile
+        setIsMobile(window.innerWidth <= 800); // Example breakpoint for mobile
         };
 
         // Initial setup
@@ -147,6 +155,10 @@ const PhotoGalleryInstance = () => {
         display: flex;
         justify-content: space-between;
         width: 92%;
+
+        @media (max-width: 800px) {
+            justify-content: center;
+        }
     `;
 
     const ColumnItemContainer = styled.div`
@@ -156,11 +168,12 @@ const PhotoGalleryInstance = () => {
         align-items: center;
         width: 49%;
 
-        @media (max-width: 600px) {
+        @media (max-width: 800px) {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
+            width: 100%;
         }
     `;
 
@@ -261,6 +274,7 @@ const PhotoGalleryInstance = () => {
                 <h1>{galleryData.title}</h1>
                 <h2>{galleryData.subtitle}</h2>
                 {galleryData.description && galleryData.description.map((text, textIndex) => (<p>{text}</p>))}
+                <HorizontalLine lineWidth='90%' />
             </TopTextInstance>
             {galleryData.format === "rows" && renderRowFormat()}
             {galleryData.format === "columns" && renderColumnFormat()}

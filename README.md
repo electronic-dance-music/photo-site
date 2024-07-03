@@ -10,9 +10,8 @@ Open terminal (probably linux subsystem for windows) and in the root directry of
 - `npm start`
 
 ### GO LIVE ON INTERNET 
-Make sure to make code changes in the main branch. Once done, you can commit and push those changes, then run the following commands to get the website ready then deploy it online (which will modify the gh-pages branch of the repo):
+Make sure to make code changes in the main branch. Once done, you can commit and push those changes, then run the following command to get the website deployed online (which will modify the gh-pages branch of the repo):
 
-`npm run build`
 `npm run deploy`
 
 
@@ -227,15 +226,13 @@ EXAMPLE: the photos on the left are even numbered starting with 0, so Marie_and_
 
 
 ## TODO
-- fix load times for images on column view (load based on what is visible?)
-- fix mobil eformattin for rows and columns galleries
+- fix load times for images on column view (load based on what is visible?) (may be issue with file sizes too large)
 
 
-- update the navbar to have photo icon (or at least make the name clickable to return home)
+
 - update favicon tiny icon
 - add contents to home page
 - add contents to about page
-- finish readme walkthrough of how to make changes
 
 
 

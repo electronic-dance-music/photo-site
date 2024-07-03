@@ -13,6 +13,18 @@ interface INavigationLinkProps
     mobileNavVisible?:Boolean
 }
 
+export const NavTitleLink = styled(Link)`
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+        color: #000;
+        text-decoration: none;
+        transform: scale(1.05);
+        transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    }
+`
+
 export const NavTitleText = styled.h1`
     padding-right: 20px;
     padding-left: 10px;
