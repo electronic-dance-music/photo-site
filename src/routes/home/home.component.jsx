@@ -10,10 +10,6 @@ const Home = () => {
             <HomeHeaderContainer>
                 <HomeHeaderImage src={`${process.env.PUBLIC_URL}/images/x.svg`}  centered ui={true} />
             </HomeHeaderContainer>
-
-            <ImageGallery imagesContext={require.context(`!!file-loader!../../../public/images/test-photos`, false, /\.(png|jpe?g|svg)$/)} />
-
-
         </Fragment>
     )
 }
