@@ -32,7 +32,7 @@ const Navigation = () => {
 
                 {/* <NavigationLogoImage src={`${process.env.PUBLIC_URL}/images/x.png`} centered ui={true} /> */}
                 <NavTitleLink to={'/'}>
-                    <NavTitleText>Lizzie Miller</NavTitleText>
+                    <NavTitleText>Lizzy Miller</NavTitleText>
                 </NavTitleLink>
 
                 <NavigationLinkContainer mobileNavVisible={mobileNavIsVisible} side="l">
