@@ -28,8 +28,8 @@ const PhotoContainer = styled.div`
 const StyledImage = styled.img`
   width: 100%;
   height: auto;
-  border-radius: 2px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  // border-radius: 2px;
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const PhotoTitle = styled.div`

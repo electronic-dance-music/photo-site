@@ -16,7 +16,7 @@ export const sharedStyleProps = {
     tabletViewMaxWidth: "1000px",
 
     //colors and gradients
-    primaryBackgroundGradient: "linear-gradient(90deg, #ffffff 0%, #f5f5f5 50%, #dcdcdc 100%);",
+    primaryBackgroundGradient: "#ffffff",
     primaryColor: "#0171BC",
     secondaryColor: "#747474",
 }

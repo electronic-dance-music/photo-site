@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
-import { HorizontalLine } from "../../styles/globalstyles.styles";
+// import { HorizontalLine } from "../../styles/globalstyles.styles";
 
 const TopTextInstance = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: Garamond, Georgia, 'Times New Roman', serif;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
     font-size: clamp(14px, 4vw, 18px);
 
@@ -60,8 +60,8 @@ const ItemContainer = styled.div`
 const StyledImage = styled.img`
     width: 100%;
     height: auto;
-    border-radius: 2px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    // border-radius: 2px;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const StackedImagesContainer = styled.div`
@@ -274,7 +274,7 @@ const PhotoGalleryInstance = () => {
                 <h1>{galleryData.title}</h1>
                 <h2>{galleryData.subtitle}</h2>
                 {galleryData.description && galleryData.description.map((text, textIndex) => (<p>{text}</p>))}
-                <HorizontalLine lineWidth='90%' />
+                {/* <HorizontalLine lineWidth='90%' /> */}
             </TopTextInstance>
             {galleryData.format === "rows" && renderRowFormat()}
             {galleryData.format === "columns" && renderColumnFormat()}

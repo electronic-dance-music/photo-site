@@ -2,7 +2,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { HorizontalLine } from '../../styles/globalstyles.styles';
+// import { HorizontalLine } from '../../styles/globalstyles.styles';
 
 const GalleryContainer = styled.div`
     display: flex;
@@ -14,7 +14,7 @@ const GalleryContainer = styled.div`
 
 const PhotoContainer = styled.div`
     flex: 1 1 45%; /* Allow two items per row on larger screens */
-    margin: 10px;
+    // margin: 10px;
     max-width: 45%; /* Limit the width of each item to 45% */
     box-sizing: border-box;
 
@@ -44,14 +44,15 @@ const StyledImage = styled.img`
     height: auto; /* Allow images to have different heights */
     max-height: 100vh;
     object-fit: cover; /* Ensure the image covers the entire area */
-    border-radius: 2px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-
+    // border-radius: 2px;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    // transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s ease;
+    
     &:hover {
         transform: scale(1.02); /* Reduced scale effect */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        filter: brightness(1.1);
+        // box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        // filter: brightness(1.1);
     }
 
     @media (max-width: 800px) {
@@ -82,6 +83,7 @@ const TopText = styled.div`
     flex-direction: column;
     align-items: center;
     font-family: Garamond, Georgia, 'Times New Roman', serif;
+    margin-bottom: 20px;
 
     font-size: clamp(14px, 4vw, 18px);
 
@@ -92,7 +94,7 @@ const TopText = styled.div`
 `;
 
 const PhotoGalleryLink = ({ gallery }) => (
-    <StyledLink to={`/gallery/${gallery.folder}`}>
+    <StyledLink to={`/portfolio/${gallery.folder}`}>
         <StyledImage src={`${process.env.PUBLIC_URL}/photo_galleries/${gallery.folder}/${gallery.coverImage}`} alt={gallery.title} />
         <GalleryInfo>
             <h2>{gallery.title}</h2>
@@ -114,9 +116,9 @@ const PhotoGallerySelector = () => {
     return (
         <Fragment>
             <TopText>
-                <h1>Sessions</h1>
+                <h1>Portfolio</h1>
                 <p>Click a photo to see more highlights!</p>
-                <HorizontalLine lineWidth='90%' />
+                {/* <HorizontalLine lineWidth='90%' /> */}
             </TopText>
             <GalleryContainer>
                 {galleries.map((gallery, index) => (

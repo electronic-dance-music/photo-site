@@ -78,7 +78,7 @@ export const NavigationLink = styled(Link)<INavigationLinkProps>`
 
     &:hover {
         color: ${sharedStyleProps.secondaryColor};
-        text-decoration: ${props => props.side === "l" ? "underline" : "none"};
+        text-decoration: "none";
         background-color: ${props => props.side === "l" ? "transparent" : "#fff"};
         transform: scale(1.05);
         transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;

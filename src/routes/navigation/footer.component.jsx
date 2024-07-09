@@ -6,7 +6,7 @@ import { faArrowUp, faHome } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 const FooterContainer = styled.footer`
-    background: linear-gradient(90deg, #ffffff 0%, #f5f5f5 50%, #dcdcdc 100%);
+    background: #ffffff;
     color: #333;
     padding: 20px 40px;
     display: flex;

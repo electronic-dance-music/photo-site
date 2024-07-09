@@ -17,7 +17,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path='about' element={<About />} />
           <Route path='contact' element={<Contact />} />
-          <Route path="gallery/*">
+          <Route path="portfolio/*">
             <Route index element={<PhotoGallerySelector />} />
             <Route path=":folderName" element={<PhotoGalleryInstance />} />
           </Route>

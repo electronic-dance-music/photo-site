@@ -17,10 +17,10 @@ export const NavigationSections:INavigationSection[] = [
         codeId: 'home'
     },
     {
-        label: 'Photo Gallery',
-        path: '/gallery',
+        label: 'Portfolio',
+        path: '/portfolio',
         side: 'l',
-        codeId: 'gallery'
+        codeId: 'portfolio'
     },
     {
         label: 'About Me',
