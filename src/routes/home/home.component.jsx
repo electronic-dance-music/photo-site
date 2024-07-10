@@ -71,7 +71,7 @@ const Home = () => {
   return (
     <>
       <HeaderImage
-          imageUrl="home/candid.jpg"
+          imageUrl="home/candid1.jpg"
           imageHeight={imageHeight}
           backgroundPositionX="48%"
           backgroundPositionY="40%"
@@ -84,7 +84,7 @@ const Home = () => {
           marginBottom={marginBottom}
         />
       <HeaderImage
-          imageUrl="home/intimate.jpg"
+          imageUrl="home/intimate1.jpg"
           imageHeight={imageHeight}
           backgroundPositionX="48%"
           backgroundPositionY="40%"
@@ -97,7 +97,7 @@ const Home = () => {
           marginBottom={marginBottom}
         />
       <HeaderImage
-          imageUrl="home/fun.jpg"
+          imageUrl="home/fun1.jpg"
           imageHeight={imageHeight}
           backgroundPositionX="42%"
           backgroundPositionY="85%"
