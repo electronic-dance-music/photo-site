@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import BlackButton from '../../components/blackButton/blackButton.component';
+import HeaderImage from '../../components/headerImage/headerImage.component';
 
 const HomeContainer = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ const PhotoContainer = styled.div`
   flex: 1 1 33%; /* Adjust width for each photo container */
   max-width: 350px; /* Maximum width to avoid overflow */
 
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     flex: 1 1 92%; /* Adjusted width for smaller screens */
     max-width: 92%; /* Adjusted width for smaller screens */
   }
@@ -45,25 +46,69 @@ const GalleryButtonContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-`;
+`
+
 
 const Home = () => {
+  const marginBottom = "20px"
+
+  const [imageHeight, setImageHeight] = useState(window.innerWidth < 800 ? "600px" : "800px")
+
+  useEffect(() => {
+    const handleResize = () => {
+      setImageHeight(window.innerWidth < 800 ? "600px" : "800px");
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
   return (
     <>
-      <HomeContainer>
-        <PhotoContainer>
-          <PhotoTitle>Candid</PhotoTitle>
-          <StyledImage src={`${process.env.PUBLIC_URL}/home/candid.jpg`} alt="Candid" />
-        </PhotoContainer>
-        <PhotoContainer>
-          <PhotoTitle>Intimate</PhotoTitle>
-          <StyledImage src={`${process.env.PUBLIC_URL}/home/intimate.jpg`} alt="Intimate" />
-        </PhotoContainer>
-        <PhotoContainer>
-          <PhotoTitle>Fun</PhotoTitle>
-          <StyledImage src={`${process.env.PUBLIC_URL}/home/fun.jpg`} alt="Fun" />
-        </PhotoContainer>
-      </HomeContainer>
+      <HeaderImage
+          imageUrl="home/candid.jpg"
+          imageHeight={imageHeight}
+          backgroundPositionX="48%"
+          backgroundPositionY="40%"
+          text="CANDID"
+          // smallText=""
+          desktopBottomOffset="20%"
+          desktopLeftOffset="10%"
+          mobileBottomOffset="45%"
+          mobileLeftOffset="10%"
+          marginBottom={marginBottom}
+        />
+      <HeaderImage
+          imageUrl="home/intimate.jpg"
+          imageHeight={imageHeight}
+          backgroundPositionX="48%"
+          backgroundPositionY="40%"
+          text="INTIMATE"
+          // smallText=""
+          desktopBottomOffset="20%"
+          desktopLeftOffset="10%"
+          mobileBottomOffset="45%"
+          mobileLeftOffset="10%"
+          marginBottom={marginBottom}
+        />
+      <HeaderImage
+          imageUrl="home/fun.jpg"
+          imageHeight={imageHeight}
+          backgroundPositionX="42%"
+          backgroundPositionY="85%"
+          text="FUN"
+          // smallText=""
+          desktopBottomOffset="20%"
+          desktopLeftOffset="10%"
+          mobileBottomOffset="45%"
+          mobileLeftOffset="10%"
+          marginBottom={marginBottom}
+        />
       <GalleryButtonContainer>
         <BlackButton text={"GET IN TOUCH"} to={'/contact'} />
       </GalleryButtonContainer>

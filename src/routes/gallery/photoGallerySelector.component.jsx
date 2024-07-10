@@ -87,11 +87,17 @@ const TopText = styled.div`
     font-family: Garamond, Georgia, 'Times New Roman', serif;
     margin-bottom: 20px;
 
-    font-size: clamp(14px, 4vw, 18px);
+    
 
     h1 {
         font-family: Garamond, Georgia, 'Times New Roman', serif;
         font-size: clamp(36px, 4vw, 40px);
+        color: ${sharedStyleProps.primaryTextColor};
+    }
+
+    p{
+        font-size: clamp(14px, 4vw, 18px);
+        color: ${sharedStyleProps.secondaryTextColor};
     }
 `;
 

@@ -9,6 +9,8 @@ const HeaderImageContainer = styled.div`
   background-position: ${props => `${props.backgroundPositionX} ${props.backgroundPositionY}`};
   background-repeat: no-repeat;
   background-size: cover;
+
+	margin-bottom: ${props => props.marginBottom};
 `;
 
 const TextContainer = styled.div`
@@ -34,6 +36,7 @@ const ImageText = styled.h1`
   font-weight: bold;
   margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+	letter-spacing: 3px;
 `;
 
 const SmallText = styled.p`
@@ -54,7 +57,8 @@ const HeaderImage = ({
   desktopBottomOffset = '20px',
   desktopLeftOffset = '20px',
   mobileBottomOffset = '10px',
-  mobileLeftOffset = '10px'
+  mobileLeftOffset = '10px',
+	marginBottom = '0px'
 }) => {
   return (
     <HeaderImageContainer 
@@ -62,6 +66,7 @@ const HeaderImage = ({
       imageHeight={imageHeight}
       backgroundPositionX={backgroundPositionX}
       backgroundPositionY={backgroundPositionY}
+			marginBottom={marginBottom}
     >
       <TextContainer
         desktopBottomOffset={desktopBottomOffset}

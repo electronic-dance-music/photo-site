@@ -72,7 +72,7 @@ const ImageContainer = styled.div`
   width: ${imageSize};
   min-width: ${imageSize};
   max-width: ${imageSize};
-  background-position: center;
+  background-position: ${props => `${props.backgroundPositionX} ${props.backgroundPositionY}`};
   background-repeat: no-repeat;
   background-size: cover;
 //   border-radius: 10px;
@@ -107,7 +107,11 @@ const Pricing = () => {
               professionally edited photos.
             </p>
           </TextContainer>
-          <ImageContainer style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/pricing/pricing-couples.jpg)` }} />
+          <ImageContainer 
+						style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/pricing/pricing-couples.jpg)` }} 
+						backgroundPositionX={'50%'}
+						backgroundPositionY={'65%'}
+					/>
         </Section>
         <Section reverse>
           <TextContainer>
@@ -121,7 +125,11 @@ const Pricing = () => {
               in an online gallery.
             </p>
           </TextContainer>
-          <ImageContainer style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/pricing/pricing-wedding.jpg)` }} />
+          <ImageContainer 
+						style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/pricing/pricing-wedding.jpg)` }} 
+						backgroundPositionX={'50%'}
+						backgroundPositionY={'25%'}	
+					/>
         </Section>
         <Section>
           <TextContainer>
@@ -135,7 +143,11 @@ const Pricing = () => {
               Lots of fun, and friendly pets are welcome!
             </p>
           </TextContainer>
-          <ImageContainer style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/pricing/pricing-portrait.jpg)` }} />
+          <ImageContainer 
+						style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/pricing/pricing-portrait.jpg)` }} 
+						backgroundPositionX={'45%'}
+						backgroundPositionY={'50%'}
+					/>
         </Section>
         <BlackButton text="GET IN TOUCH" to="/contact" />
       </PricingContainer>

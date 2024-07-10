@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import BlackButton from '../../components/blackButton/blackButton.component';
+import { sharedStyleProps } from '../../styles/globalstyles.styles';
 // import { HorizontalLine } from "../../styles/globalstyles.styles";
 
 const TopTextInstance = styled.div`
@@ -16,10 +17,12 @@ const TopTextInstance = styled.div`
     h1 {
         font-family: Garamond, Georgia, 'Times New Roman', serif;
         font-size: clamp(36px, 4vw, 40px);
+        color: ${sharedStyleProps.primaryTextColor};
     }
     h2 {
         font-family: Garamond, Georgia, 'Times New Roman', serif;
         font-size: clamp(22px, 4vw, 26px);
+        color: ${sharedStyleProps.secondaryTextColor};
     }
 `;
 
