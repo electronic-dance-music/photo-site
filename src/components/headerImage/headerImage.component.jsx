@@ -38,6 +38,10 @@ const ImageText = styled.h1`
   margin: 0;
   // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
 	letter-spacing: 3px;
+
+  @media (max-width: 768px) {
+    color: white;
+  }
 `;
 
 const SmallText = styled.p`
