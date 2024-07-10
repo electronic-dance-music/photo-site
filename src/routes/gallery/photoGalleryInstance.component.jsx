@@ -5,22 +5,22 @@ import BlackButton from '../../components/blackButton/blackButton.component';
 import { sharedStyleProps } from '../../styles/globalstyles.styles';
 // import { HorizontalLine } from "../../styles/globalstyles.styles";
 
-const TopTextInstance = styled.div`
+export const TopTextInstance = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-family: ${sharedStyleProps.fontsToUse};
     margin-bottom: 20px;
 
     font-size: clamp(14px, 4vw, 18px);
 
     h1 {
-        font-family: Garamond, Georgia, 'Times New Roman', serif;
+        font-family: ${sharedStyleProps.fontsToUse};
         font-size: clamp(36px, 4vw, 40px);
         color: ${sharedStyleProps.primaryTextColor};
     }
     h2 {
-        font-family: Garamond, Georgia, 'Times New Roman', serif;
+        font-family: ${sharedStyleProps.fontsToUse};
         font-size: clamp(22px, 4vw, 26px);
         color: ${sharedStyleProps.secondaryTextColor};
     }
@@ -81,14 +81,14 @@ const StackedImagesContainer = styled.div`
 const StyledText = styled.div`
     padding: 10px;
     text-align: center;
-    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-family: ${sharedStyleProps.fontsToUse};
 
     p {
         font-size: clamp(14px, 4vw, 18px);
     }
 
     h3 {
-        font-family: Garamond, Georgia, 'Times New Roman', serif;
+        font-family: ${sharedStyleProps.fontsToUse};
         font-size: clamp(31px, 5vw, 35px);
     }
 `;

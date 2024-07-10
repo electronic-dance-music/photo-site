@@ -233,7 +233,7 @@ EXAMPLE: the photos on the left are even numbered starting with 0, so Marie_and_
 - home page look like example
     - view galleries button should be smaller and match pixieset button
 
-
+- tint background photos and have text color optoni as parameter
 
 
 - gallery select page look like example:

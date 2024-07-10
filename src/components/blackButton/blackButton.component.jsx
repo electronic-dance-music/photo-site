@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { sharedStyleProps } from '../../styles/globalstyles.styles';
 
 const Button = styled.button`
   background-color: #2d2d2d;
   color: white;
   padding: 12px 24px;
-  font-family: Garamond, Georgia, 'Times New Roman', serif;
+  font-family: ${sharedStyleProps.fontsToUse};
   font-size: clamp(13px, 3vw, 15px);
   letter-spacing: 1.5px;
   border: none;

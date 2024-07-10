@@ -39,12 +39,12 @@ const TextContainer = styled.div`
   align-items: ${props => props.flexAlign ? props.flexAlign : 'flex-start'};
 
   p {
-      font-family: Garamond, Georgia, 'Times New Roman', serif;
+      font-family: ${sharedStyleProps.fontsToUse};
       font-size: clamp(16px, 4vw, 20px);
       color: ${sharedStyleProps.secondaryTextColor};
   }
   h2 {
-      font-family: Garamond, Georgia, 'Times New Roman', serif;
+      font-family: ${sharedStyleProps.fontsToUse};
       font-size: clamp(26px, 4vw, 30px);
       font-weight: bold;
       color: ${sharedStyleProps.primaryTextColor};
@@ -82,7 +82,7 @@ const About = () => {
           backgroundPositionX="48%"
           backgroundPositionY="80%"
           text="ABOUT THE ARTIST"
-          // smallText=""
+          textColor='#3a3a3a'
           desktopBottomOffset="20%"
           desktopLeftOffset="10%"
           mobileBottomOffset="50%"

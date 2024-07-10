@@ -4,6 +4,7 @@ import HeaderImage from '../../components/headerImage/headerImage.component';
 import BlackButton from '../../components/blackButton/blackButton.component';
 import { sharedStyleProps } from "../../styles/globalstyles.styles";
 import { HorizontalLine } from '../../styles/globalstyles.styles';
+import { TopTextInstance } from '../gallery/photoGalleryInstance.component';
 
 const PricingContainer = styled.div`
   display: flex;
@@ -42,19 +43,19 @@ const TextContainer = styled.div`
   text-align: left;
 
   div {
-    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-family: ${sharedStyleProps.fontsToUse};
     font-size: clamp(14px, 3vw, 16px);
     color: ${sharedStyleProps.secondaryTextColor};
     letter-spacing: 4px;
   }
 
   p {
-    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-family: ${sharedStyleProps.fontsToUse};
     font-size: clamp(16px, 4vw, 20px);
     color: ${sharedStyleProps.secondaryTextColor};
   }
   h2 {
-    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-family: ${sharedStyleProps.fontsToUse};
     font-size: clamp(26px, 4vw, 30px);
     font-weight: bold;
     color: ${sharedStyleProps.primaryTextColor};
@@ -80,12 +81,17 @@ const ImageContainer = styled.div`
 
 `;
 
+const TopImage = styled.img`
+  width: 100%;
+  height: auto;
+`
+
 const Pricing = () => {
   return (
     <>
-      <HeaderImage
+      {/* <HeaderImage
         imageUrl="pricing/pricing-top.jpg"
-        imageHeight="700px"
+        imageHeight="4000px"
         backgroundPositionX="48%"
         backgroundPositionY="20%"
         text="PRICING"
@@ -93,7 +99,11 @@ const Pricing = () => {
         desktopLeftOffset="10%"
         mobileBottomOffset="50%"
         mobileLeftOffset="5%"
-      />
+      /> */}
+      <TopTextInstance>
+          <h1>Pricing</h1>
+      </TopTextInstance>
+      <TopImage src='pricing/pricing-top.jpg'/>
       <PricingContainer>
         <Section>
           <TextContainer>

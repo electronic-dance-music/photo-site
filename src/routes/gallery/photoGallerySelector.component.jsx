@@ -63,17 +63,17 @@ const StyledImage = styled.img`
 
 const GalleryInfo = styled.div`
     margin-top: 10px;
-    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-family: ${sharedStyleProps.fontsToUse};
 
     h2 {
-        font-family: Garamond, Georgia, 'Times New Roman', serif;
+        font-family: ${sharedStyleProps.fontsToUse};
         font-size: clamp(23px, 4vw, 27px);
         margin: 5px 0;
         color: ${sharedStyleProps.primaryTextColor};
     }
 
     p {
-        font-family: Garamond, Georgia, 'Times New Roman', serif;
+        font-family: ${sharedStyleProps.fontsToUse};
         font-size: clamp(16px, 3vw, 20px);
         margin: 0;
         color: #949494;
@@ -84,13 +84,13 @@ const TopText = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-family: ${sharedStyleProps.fontsToUse};
     margin-bottom: 20px;
 
     
 
     h1 {
-        font-family: Garamond, Georgia, 'Times New Roman', serif;
+        font-family: ${sharedStyleProps.fontsToUse};
         font-size: clamp(36px, 4vw, 40px);
         color: ${sharedStyleProps.primaryTextColor};
     }

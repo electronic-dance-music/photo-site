@@ -3,6 +3,15 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import BlackButton from '../../components/blackButton/blackButton.component';
 import HeaderImage from '../../components/headerImage/headerImage.component';
+import { sharedStyleProps } from '../../styles/globalstyles.styles';
+
+const MasterContainer = styled.div`
+  margin: 0 2.5%;
+
+  @media (max-width: 1000px) {
+    margin: 0 0;
+  }
+`
 
 const HomeContainer = styled.div`
   display: flex;
@@ -37,9 +46,9 @@ const StyledImage = styled.img`
 const PhotoTitle = styled.div`
   // margin-top: 10px;
   font-weight: bold;
-  font-family: Garamond, Georgia, 'Times New Roman', serif;
+  font-family: ${sharedStyleProps.fontsToUse};
   font-size: clamp(36px, 4vw, 40px);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), -1px -1px 1px rgba(255, 255, 255, 0.7), 0 0 2px rgba(0, 0, 0, 0.1); /* Subtle embossed effect */
+  // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), -1px -1px 1px rgba(255, 255, 255, 0.7), 0 0 2px rgba(0, 0, 0, 0.1); /* Subtle embossed effect */
 `;
 
 const GalleryButtonContainer = styled.div`
@@ -69,7 +78,7 @@ const Home = () => {
 
 
   return (
-    <>
+    <MasterContainer>
       <HeaderImage
           imageUrl="home/candid1.jpg"
           imageHeight={imageHeight}
@@ -100,7 +109,7 @@ const Home = () => {
           imageUrl="home/fun1.jpg"
           imageHeight={imageHeight}
           backgroundPositionX="42%"
-          backgroundPositionY="85%"
+          backgroundPositionY="50%"
           text="FUN"
           // smallText=""
           desktopBottomOffset="20%"
@@ -112,7 +121,7 @@ const Home = () => {
       <GalleryButtonContainer>
         <BlackButton text={"GET IN TOUCH"} to={'/contact'} />
       </GalleryButtonContainer>
-    </>
+    </MasterContainer>
   );
 };
 

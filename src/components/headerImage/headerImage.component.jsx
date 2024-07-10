@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { sharedStyleProps } from '../../styles/globalstyles.styles';
 
 const HeaderImageContainer = styled.div`
   position: relative;
@@ -30,21 +31,21 @@ const TextContainer = styled.div`
 `;
 
 const ImageText = styled.h1`
-  color: white;
-  font-family: Garamond, Georgia, 'Times New Roman', serif;
+  color: ${props => props.textColor};
+  font-family: ${sharedStyleProps.fontsToUse};
   font-size: clamp(36px, 4vw, 40px);
   font-weight: bold;
   margin: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+  // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
 	letter-spacing: 3px;
 `;
 
 const SmallText = styled.p`
-  color: white;
-  font-family: Garamond, Georgia, 'Times New Roman', serif;
+  color: ${props => props.textColor};
+  font-family: ${sharedStyleProps.fontsToUse};
   font-size: clamp(16px, 3vw, 20px);
   margin: 0 0 10px 0;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+  // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
 `;
 
 const HeaderImage = ({
@@ -54,6 +55,7 @@ const HeaderImage = ({
   backgroundPositionY = 'center',
   text,
   smallText,
+  textColor = 'white',
   desktopBottomOffset = '20px',
   desktopLeftOffset = '20px',
   mobileBottomOffset = '10px',
@@ -74,8 +76,8 @@ const HeaderImage = ({
         mobileBottomOffset={mobileBottomOffset}
         mobileLeftOffset={mobileLeftOffset}
       >
-        {smallText && <SmallText>{smallText}</SmallText>}
-        <ImageText>{text}</ImageText>
+        {smallText && <SmallText textColor={textColor}>{smallText}</SmallText>}
+        <ImageText textColor={textColor}>{text}</ImageText>
       </TextContainer>
     </HeaderImageContainer>
   );

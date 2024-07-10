@@ -8,11 +8,11 @@ export const ContactContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   padding: 20px 20px;
-  font-family: Garamond, Georgia, 'Times New Roman', serif;
+  font-family: ${sharedStyleProps.fontsToUse};
   
 
   h2{
-    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-family: ${sharedStyleProps.fontsToUse};
     font-size: clamp(31px, 4vw, 35px);
     color: ${sharedStyleProps.primaryTextColor};
   }

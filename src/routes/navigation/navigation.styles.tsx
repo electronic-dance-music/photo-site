@@ -28,8 +28,8 @@ export const NavTitleLink = styled(Link)`
 export const NavTitleText = styled.h1`
     padding-right: 20px;
     padding-left: 10px;
-    font-family: Garamond, Georgia, 'Times New Roman', serif;
-    font-size: 24px;
+    font-family: ${sharedStyleProps.fontsToUse};
+    font-size: 26px;
 `
 
 
@@ -62,7 +62,7 @@ export const NavigationContainer = styled.div`
     z-index: 1000;
     white-space: nowrap;
 
-    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-family: ${sharedStyleProps.fontsToUse};
 
      @media screen and (max-width: ${props => sharedStyleProps.tabletViewMaxWidth}){
     justify-content: flex-start;
@@ -77,8 +77,8 @@ export const NavigationLink = styled(Link)<INavigationLinkProps>`
     letter-spacing: 1px;
     vertical-align: sub;
     text-decoration: none;
-    font-family: Garamond, Georgia, 'Times New Roman', serif;
-    font-size: clamp(12px, 4vw, 13px);
+    font-family: ${sharedStyleProps.fontsToUse};
+    font-size: clamp(14px, 4vw, 16px);
     border: ${props => props.side === "l" ? "none" : "0.2rem solid #fff"};
     border-radius: 10px;
 
@@ -139,7 +139,7 @@ export const NavigationLinkContainer = styled.div<INavigationLinkProps>`
 `
 
 export const BelowNavigationContainer = styled.div`
-    padding-top: ${props => (SharedNavigationHeightProp.navigationHeight + 10).toString() + "px"};
+    padding-top: ${props => (SharedNavigationHeightProp.navigationHeight).toString() + "px"};
 `
 
 export const NavigationLogoImage = styled(Image)`

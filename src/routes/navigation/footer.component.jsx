@@ -24,7 +24,7 @@ const FooterContainer = styled.footer`
 const FooterText = styled.p`
     margin: 0;
 
-    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-family: ${sharedStyleProps.fontsToUse};
     font-size: clamp(12px, 4vw, 14px);
 
     @media (max-width: 800px) {

@@ -24,4 +24,6 @@ export const sharedStyleProps = {
     primaryTextColor: '#2d2d2d',
     secondaryTextColor: '#3a3a3a',
 
+    fontsToUse: "Garamond, Georgia, 'Times New Roman', serif"
+
 }
