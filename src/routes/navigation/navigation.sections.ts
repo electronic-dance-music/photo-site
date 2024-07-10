@@ -23,6 +23,12 @@ export const NavigationSections:INavigationSection[] = [
         codeId: 'portfolio'
     },
     {
+        label: 'Pricing',
+        path: '/pricing',
+        side: 'l',
+        codeId: 'pricing'
+    },
+    {
         label: 'About Me',
         path: '/about',
         side: 'l',
