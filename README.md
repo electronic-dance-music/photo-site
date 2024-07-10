@@ -234,12 +234,6 @@ EXAMPLE: the photos on the left are even numbered starting with 0, so Marie_and_
     - view galleries button should be smaller and match pixieset button
 
 
-- nav bar remove gradient  (pure white)
-    - remove underline for header options
-    - Lizzie Miller header text smaller
-    - make the current page button greyed out and not clickable on the nav
-- remove drop shadows and rounded corners on all photos
-- add 'pricing' page
 
 
 - gallery select page look like example:
@@ -247,9 +241,7 @@ EXAMPLE: the photos on the left are even numbered starting with 0, so Marie_and_
         - make the photos silghtly tinted on mobile to compensate for lack fo mouse hover
         
 
-- column view: have spacing between columns be duplicated for spacing between rows (change teh row spacing only)
 - feature clickking on image to make it fully visible on screen
-- pricing page have text left aligned. Have phtos smaller and have the about me page look similar with left aligned text (but about me alternates teh positions)
 
 
 

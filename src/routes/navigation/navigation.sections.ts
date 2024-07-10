@@ -11,31 +11,31 @@ export interface INavigationSection
 
 export const NavigationSections:INavigationSection[] = [
     {
-        label: 'Home',
+        label: 'HOME',
         path: '/',
         side: 'l',
         codeId: 'home'
     },
     {
-        label: 'Portfolio',
+        label: 'PORTFOLIO',
         path: '/portfolio',
         side: 'l',
         codeId: 'portfolio'
     },
     {
-        label: 'Pricing',
+        label: 'PRICING',
         path: '/pricing',
         side: 'l',
         codeId: 'pricing'
     },
     {
-        label: 'About Me',
+        label: 'ABOUT ME',
         path: '/about',
         side: 'l',
         codeId: 'about'
     },
     {
-        label: 'Contact',
+        label: 'CONTACT',
         path: '/contact',
         side: 'l',
         codeId: 'contact'

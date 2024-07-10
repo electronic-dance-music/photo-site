@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { sharedStyleProps } from '../../styles/globalstyles.styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faArrowUp, faHome } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const FooterContainer = styled.footer`
     background: #ffffff;
-    color: #333;
+    color: ${sharedStyleProps.secondaryTextColor};
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
@@ -22,6 +23,9 @@ const FooterContainer = styled.footer`
 
 const FooterText = styled.p`
     margin: 0;
+
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-size: clamp(12px, 4vw, 14px);
 
     @media (max-width: 800px) {
         margin-bottom: 10px;

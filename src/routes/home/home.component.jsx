@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import BlackButton from '../../components/blackButton/blackButton.component';
 
 const HomeContainer = styled.div`
   display: flex;
@@ -46,24 +47,6 @@ const GalleryButtonContainer = styled.div`
   justify-content: center;
 `;
 
-const GalleryButton = styled(Link)`
-  display: block;
-  margin-bottom: 20px;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #333;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  font-family: Garamond, Georgia, 'Times New Roman', serif;
-  font-size: clamp(22px, 4vw, 26px);
-
-  &:hover {
-    background-color: #e0e0e0;
-  }
-`;
-
 const Home = () => {
   return (
     <>
@@ -82,7 +65,7 @@ const Home = () => {
         </PhotoContainer>
       </HomeContainer>
       <GalleryButtonContainer>
-        <GalleryButton to="/gallery">View Galleries</GalleryButton>
+        <BlackButton text={"GET IN TOUCH"} to={'/contact'} />
       </GalleryButtonContainer>
     </>
   );

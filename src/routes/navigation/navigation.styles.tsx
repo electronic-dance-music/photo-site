@@ -29,7 +29,7 @@ export const NavTitleText = styled.h1`
     padding-right: 20px;
     padding-left: 10px;
     font-family: Garamond, Georgia, 'Times New Roman', serif;
-    font-size: 30px;
+    font-size: 24px;
 `
 
 
@@ -63,36 +63,49 @@ export const NavigationContainer = styled.div`
     white-space: nowrap;
 
     font-family: Garamond, Georgia, 'Times New Roman', serif;
+
+     @media screen and (max-width: ${props => sharedStyleProps.tabletViewMaxWidth}){
+    justify-content: flex-start;
+    }
 `
 
 export const NavigationLink = styled(Link)<INavigationLinkProps>`
     margin: 0px 8px;
     padding: 0px 5px;
     cursor: pointer;
-    color: #000;
+    color: ${sharedStyleProps.primaryTextColor};
+    letter-spacing: 1px;
     vertical-align: sub;
     text-decoration: none;
-
+    font-family: Garamond, Georgia, 'Times New Roman', serif;
+    font-size: clamp(12px, 4vw, 13px);
     border: ${props => props.side === "l" ? "none" : "0.2rem solid #fff"};
     border-radius: 10px;
 
     &:hover {
-        color: ${sharedStyleProps.secondaryColor};
-        text-decoration: "none";
+        color: rgba(45, 45, 45, 0.6);
         background-color: ${props => props.side === "l" ? "transparent" : "#fff"};
         transform: scale(1.05);
         transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
     }
-    
+
+    // Conditional styling for active link (current page)
+    &.active {
+        pointer-events: none; /* Disable link */
+        color: rgba(45, 45, 45, 0.6);
+        background-color: ${props => props.side === "l" ? "transparent" : "#fff"};
+        // transform: scale(1.05);
+    }
 
     @media screen and (max-width: ${props => sharedStyleProps.tabletViewMaxWidth}){
         text-align: center;
-        margin: 5px;
+        margin: 15px;
         width: 80%;
         display: table;
+        font-size: clamp(15px, 4vw, 18px);
     }
-    
-`
+`;
+
 
 export const NavigationLinkContainer = styled.div<INavigationLinkProps>`
     display: flex;

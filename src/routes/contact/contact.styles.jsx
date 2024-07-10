@@ -1,23 +1,26 @@
 // contact.styles.jsx
 import styled from 'styled-components';
+import { sharedStyleProps } from '../../styles/globalstyles.styles';
 
 export const ContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px 20px;
   font-family: Garamond, Georgia, 'Times New Roman', serif;
   
 
   h2{
     font-family: Garamond, Georgia, 'Times New Roman', serif;
     font-size: clamp(31px, 4vw, 35px);
+    color: ${sharedStyleProps.primaryTextColor};
   }
   p
   {
     width: 85%;
     font-size: clamp(14px, 4vw, 18px);
+    color: ${sharedStyleProps.secondaryTextColor};
   }
 `;
 

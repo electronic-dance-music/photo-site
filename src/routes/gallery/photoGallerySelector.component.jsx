@@ -2,6 +2,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { sharedStyleProps } from '../../styles/globalstyles.styles';
 // import { HorizontalLine } from '../../styles/globalstyles.styles';
 
 const GalleryContainer = styled.div`
@@ -68,6 +69,7 @@ const GalleryInfo = styled.div`
         font-family: Garamond, Georgia, 'Times New Roman', serif;
         font-size: clamp(23px, 4vw, 27px);
         margin: 5px 0;
+        color: ${sharedStyleProps.primaryTextColor};
     }
 
     p {

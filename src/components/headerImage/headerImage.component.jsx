@@ -11,22 +11,37 @@ const HeaderImageContainer = styled.div`
   background-size: cover;
 `;
 
-const ImageText = styled.h1`
-  color: white;
-  font-family: Garamond, Georgia, 'Times New Roman', serif;
-  font-size: clamp(36px, 4vw, 40px);
-  font-weight: bold;
+const TextContainer = styled.div`
   position: absolute;
   bottom: ${props => props.desktopBottomOffset};
   left: ${props => props.desktopLeftOffset};
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 80vw;
-  text-align: left;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+  text-align: left; /* Ensures left alignment */
 
   @media (max-width: 768px) {
     bottom: ${props => props.mobileBottomOffset};
     left: ${props => props.mobileLeftOffset};
   }
+`;
+
+const ImageText = styled.h1`
+  color: white;
+  font-family: Garamond, Georgia, 'Times New Roman', serif;
+  font-size: clamp(36px, 4vw, 40px);
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+`;
+
+const SmallText = styled.p`
+  color: white;
+  font-family: Garamond, Georgia, 'Times New Roman', serif;
+  font-size: clamp(16px, 3vw, 20px);
+  margin: 0 0 10px 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
 `;
 
 const HeaderImage = ({
@@ -35,6 +50,7 @@ const HeaderImage = ({
   backgroundPositionX = 'center',
   backgroundPositionY = 'center',
   text,
+  smallText,
   desktopBottomOffset = '20px',
   desktopLeftOffset = '20px',
   mobileBottomOffset = '10px',
@@ -47,14 +63,15 @@ const HeaderImage = ({
       backgroundPositionX={backgroundPositionX}
       backgroundPositionY={backgroundPositionY}
     >
-      <ImageText
+      <TextContainer
         desktopBottomOffset={desktopBottomOffset}
         desktopLeftOffset={desktopLeftOffset}
         mobileBottomOffset={mobileBottomOffset}
         mobileLeftOffset={mobileLeftOffset}
       >
-        {text}
-      </ImageText>
+        {smallText && <SmallText>{smallText}</SmallText>}
+        <ImageText>{text}</ImageText>
+      </TextContainer>
     </HeaderImageContainer>
   );
 };

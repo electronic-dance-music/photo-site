@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import BlackButton from '../../components/blackButton/blackButton.component';
 // import { HorizontalLine } from "../../styles/globalstyles.styles";
 
 const TopTextInstance = styled.div`
@@ -153,7 +154,8 @@ const PhotoGalleryInstance = () => {
 
     const ColumnContainer = styled.div`
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
+        gap: 20px;
         width: 92%;
 
         @media (max-width: 800px) {
@@ -278,6 +280,9 @@ const PhotoGalleryInstance = () => {
             </TopTextInstance>
             {galleryData.format === "rows" && renderRowFormat()}
             {galleryData.format === "columns" && renderColumnFormat()}
+            <div style={{ marginTop: '20px' }}>
+                <BlackButton  text={"Back To Portfolio"} to={'/portfolio'} />
+            </div>
         </>
     );
 };

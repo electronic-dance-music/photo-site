@@ -8,6 +8,7 @@ interface IHorizontalLineProps
 
 export const HorizontalLine = styled.hr<IHorizontalLineProps>`
     width: ${props => props.lineWidth};
+    opacity: .5;
 `
 
 //css variables essentially to help share props like colors or sizes between various components
@@ -19,4 +20,8 @@ export const sharedStyleProps = {
     primaryBackgroundGradient: "#ffffff",
     primaryColor: "#0171BC",
     secondaryColor: "#747474",
+
+    primaryTextColor: '#2d2d2d',
+    secondaryTextColor: '#3a3a3a',
+
 }
