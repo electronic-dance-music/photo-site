@@ -40,7 +40,7 @@ const ImageText = styled.h1`
 	letter-spacing: 3px;
 
   @media (max-width: 768px) {
-    color: white;
+    color: ${props => props.textColorMobile};
   }
 `;
 
@@ -50,6 +50,10 @@ const SmallText = styled.p`
   font-size: clamp(16px, 3vw, 20px);
   margin: 0 0 10px 0;
   // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+
+  @media (max-width: 768px) {
+    color: ${props => props.textColorMobile};
+  }
 `;
 
 const HeaderImage = ({
@@ -60,6 +64,7 @@ const HeaderImage = ({
   text,
   smallText,
   textColor = 'white',
+  textColorMobile = 'white',
   desktopBottomOffset = '20px',
   desktopLeftOffset = '20px',
   mobileBottomOffset = '10px',
@@ -80,8 +85,8 @@ const HeaderImage = ({
         mobileBottomOffset={mobileBottomOffset}
         mobileLeftOffset={mobileLeftOffset}
       >
-        {smallText && <SmallText textColor={textColor}>{smallText}</SmallText>}
-        <ImageText textColor={textColor}>{text}</ImageText>
+        {smallText && <SmallText textColor={textColor} textColorMobile={textColorMobile}>{smallText}</SmallText>}
+        <ImageText textColor={textColor} textColorMobile={textColorMobile}>{text}</ImageText>
       </TextContainer>
     </HeaderImageContainer>
   );

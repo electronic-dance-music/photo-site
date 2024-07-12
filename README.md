@@ -228,13 +228,6 @@ EXAMPLE: the photos on the left are even numbered starting with 0, so Marie_and_
 ## TODO
 - fix load times for images on column view (load based on what is visible?) (may be issue with file sizes too large)
 
-- all text color to be default rgb(45,45,45)
-
-- home page look like example
-    - view galleries button should be smaller and match pixieset button
-
-- tint background photos and have text color optoni as parameter
-
 
 - gallery select page look like example:
     - can try making it with text over picture if want to try
@@ -242,10 +235,5 @@ EXAMPLE: the photos on the left are even numbered starting with 0, so Marie_and_
         
 
 - feature clickking on image to make it fully visible on screen
-
-
-
-- add contents to home page
-- add contents to about page
 
 

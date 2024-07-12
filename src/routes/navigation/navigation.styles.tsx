@@ -59,7 +59,7 @@ export const NavigationContainer = styled.div`
     align-items: center;
     font-size: 1.2rem;
     position: fixed;
-    z-index: 1000;
+    z-index: 800;
     white-space: nowrap;
 
     font-family: ${sharedStyleProps.fontsToUse};

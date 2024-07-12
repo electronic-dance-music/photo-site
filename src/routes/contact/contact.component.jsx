@@ -58,6 +58,7 @@ const Contact = () => {
             text="CONTACT ME"
             smallText="LET'S TELL YOUR STORY"
             textColor='#3a3a3a'
+            textColorMobile='#3a3a3a'
             desktopBottomOffset="30%"
             desktopLeftOffset="10%"
             mobileBottomOffset="65%"
