@@ -1,0 +1,107 @@
+{
+    "title": "George",
+    "subtitle": "Baton Rouge, LA",
+    "format": "columns",
+    "contents": [
+        {
+            "type": "photo",
+            "image": "george-1.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-2.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-3.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-4.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-5.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-6.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-7.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-8.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-9.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-10.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-11.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-12.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-13.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-14.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-15.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-16.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-17.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-18.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-19.jpg",
+            "title": "George"
+        },
+        {
+            "type": "photo",
+            "image": "george-20.jpg",
+            "title": "George"
+        }
+    ]
+}
