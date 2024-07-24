@@ -46,6 +46,7 @@ const TextContainer = styled.div`
   align-items: ${props => props.flexAlign ? props.flexAlign : 'flex-start'};
 
   p {
+    line-height: 1.8;
       font-family: ${sharedStyleProps.fontsToUse};
       font-size: clamp(16px, 4vw, 20px);
       color: ${sharedStyleProps.secondaryTextColor};

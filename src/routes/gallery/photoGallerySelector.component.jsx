@@ -10,7 +10,7 @@ const GalleryContainer = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 `;
 
 const PhotoContainer = styled.div`

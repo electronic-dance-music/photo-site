@@ -38,6 +38,10 @@ export const NameContainer = styled.div`
 export const GoogleForm = styled.iframe`
   width: 100%;
   max-width: 730px;
-  height: 100vh;
+  min-height: 1800px;
   border: none;
+
+  @media (max-width: 470px){
+  min-height: 2050px;
+  }
 `
