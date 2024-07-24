@@ -11,6 +11,13 @@ const AboutContainer = styled.div`
   gap: 40px;
   padding: 20px;
 
+  h2 {
+      font-family: ${sharedStyleProps.fontsToUse};
+      font-size: clamp(26px, 4vw, 30px);
+      font-weight: bold;
+      color: ${sharedStyleProps.primaryTextColor};
+  }
+
   @media (min-width: 1000px) {
     padding: 80px;
   }
@@ -55,43 +62,76 @@ const ImageContainer = styled.div`
   flex: 1;
 
   img {
-    width: 100%;
-    height: auto;
-    // border-radius: 10px;
-    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 650px;
   }
 `;
 
+const TrailImagesHeader = styled.h2`
+  font-family: ${sharedStyleProps.fontsToUse};
+  font-size: clamp(26px, 4vw, 30px);
+  font-weight: bold;
+  color: ${sharedStyleProps.primaryTextColor};
+  text-align: left;
+`;
+
+const TrailImagesContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+
+  div {
+    flex: 1 0 30%;
+    padding-top: 30%; /* This ensures the div maintains a square aspect ratio */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+     @media (max-width: 800px) {
+      flex: 1 0 45%;
+      padding-top: 45%;
+    }
+
+    @media (max-width: 600px) {
+      flex: 1 0 100%;
+      padding-top: 100%;
+    }
+  }
+`;
+
+const TrailImage = styled.div`
+  background-image: url(${props => props.imageUrl});
+  background-position: ${props => `${props.backgroundPositionX}% ${props.backgroundPositionY}%`};
+`;
+
 const About = () => {
+  const trailImages = [
+    { url: `${process.env.PUBLIC_URL}/about/trail1.jpg`, posX: 50, posY: 60 },
+    { url: `${process.env.PUBLIC_URL}/about/trail2.jpeg`, posX: 50, posY: 50 },
+    { url: `${process.env.PUBLIC_URL}/about/trail3.jpg`, posX: 50, posY: 50 },
+    { url: `${process.env.PUBLIC_URL}/about/trail4.jpeg`, posX: 50, posY: 50 },
+    { url: `${process.env.PUBLIC_URL}/about/trail5.jpeg`, posX: 50, posY: 50 },
+    { url: `${process.env.PUBLIC_URL}/about/trail6.jpg`, posX: 50, posY: 30 },
+  ];
+
   return (
     <>
-      {/* <HeaderImage
-          imageUrl="about/about-top.jpg" // Replace with the correct path to your image
-          text="ABOUT THE ARTIST"
-          bgPositionX="50%"
-          bgPositionY="50%"
-          desktopBottomOffset="10%" // Adjust the bottom offset for desktop view
-          mobileBottomOffset="40%" // Adjust the bottom offset for mobile view
-          desktopLeftOffset="5%" // Adjust the left offset for desktop view
-          mobileLeftOffset="5%" // Adjust the left offset for mobile view
-        /> */}
-
-        <HeaderImage
-          imageUrl="about/about-top.jpg"
-          imageHeight="800px"
-          backgroundPositionX="48%"
-          backgroundPositionY="80%"
-          text="ABOUT THE ARTIST"
-          textColor='#3a3a3a'
-          desktopBottomOffset="20%"
-          desktopLeftOffset="10%"
-          mobileBottomOffset="50%"
-          mobileLeftOffset="5%"
-        />
+      <HeaderImage
+        imageUrl="about/about-top.jpg"
+        imageHeight="800px"
+        backgroundPositionX="48%"
+        backgroundPositionY="80%"
+        text="ABOUT THE ARTIST"
+        textColor='#3a3a3a'
+        desktopBottomOffset="20%"
+        desktopLeftOffset="10%"
+        mobileBottomOffset="50%"
+        mobileLeftOffset="5%"
+      />
       <AboutContainer>
+        <h2>Hi, I'm Lizzie Miller!</h2>
         <Section>
           <TextContainer textAlign={"center"} flexAlign={"center"}>
-            <h2>Hello, I'm Lizzie Miller!</h2>
+            <h2>Baton Rouge based photographer</h2>
             <HorizontalLine lineWidth={'60px'} />
             <p>
               I am a Louisiana native currently based in Baton Rouge, and I love backpacking, rock climbing, and art. 
@@ -100,16 +140,20 @@ const About = () => {
               Aaron, and I hiked the Appalachian Trail: a 2194 mile journey from Georgia to Maine. Check out my blog post about it below!
             </p>
             <BlackButton text={"BLOG"} href={"https://www.kahdalea.com/adventure/worm-flippers-and-their-great-appalachian-adventure/"} />
-            {/* <button>
-              <a href="https://www.kahdalea.com/adventure/worm-flippers-and-their-great-appalachian-adventure/" target="_blank" rel="noopener noreferrer"> here</a>
-            </button> */}
-
           </TextContainer>
           <ImageContainer>
-            <img src={`${process.env.PUBLIC_URL}/about/about-first.jpg`} alt="About Me" />
+            <img src={`${process.env.PUBLIC_URL}/about/about-me.jpg`} alt="About Me" />
           </ImageContainer>
         </Section>
-        <Section reverse>
+
+        <TrailImagesHeader>Photos from the Appalachian Trail</TrailImagesHeader>
+        <TrailImagesContainer>
+          {trailImages.map((image, index) => (
+            <TrailImage key={index} imageUrl={image.url} backgroundPositionX={image.posX} backgroundPositionY={image.posY} />
+          ))}
+        </TrailImagesContainer>
+
+        <Section>
           <TextContainer>
             <h2>Work</h2>
             <p></p>
@@ -125,10 +169,10 @@ const About = () => {
             </p>
           </TextContainer>
           <ImageContainer>
-            <img src={`${process.env.PUBLIC_URL}/about/work.jpg`} alt="Work" />
+            <img src={`${process.env.PUBLIC_URL}/about/about-work.jpg`} alt="Work" />
           </ImageContainer>
         </Section>
-        <Section>
+        <Section reverse>
           <TextContainer>
             <h2>Photography Philosophy</h2>
             <p></p>
@@ -141,7 +185,7 @@ const About = () => {
             <p>My style is <b>candid</b>, <b>intimate</b>, and <b>fun</b>!</p>
           </TextContainer>
           <ImageContainer>
-            <img src={`${process.env.PUBLIC_URL}/about/philosophy.jpg`} alt="Photography Philosophy" />
+            <img src={`${process.env.PUBLIC_URL}/about/about-philosophy.jpg`} alt="Photography Philosophy" />
           </ImageContainer>
         </Section>
         <BlackButton text={"GET IN TOUCH"} to={'/contact'}/>

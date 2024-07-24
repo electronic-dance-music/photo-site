@@ -103,7 +103,7 @@ const Overlay = styled.div`
     align-items: center;
     z-index: ${({ isOpen }) => (isOpen ? '1000' : '-1000')};
     opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
-    transition: opacity 0.25s ease-in-out, z-index ${({ isOpen }) => (isOpen ? '0s' : '1.5s')} linear;
+    transition: opacity 0.25s ease-in-out, z-index ${({ isOpen }) => (isOpen ? '0s' : '0.5s')} linear;
 `;
 
 

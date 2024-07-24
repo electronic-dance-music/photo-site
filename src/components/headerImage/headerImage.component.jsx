@@ -33,7 +33,7 @@ const TextContainer = styled.div`
 const ImageText = styled.h1`
   color: ${props => props.textColor};
   font-family: ${sharedStyleProps.fontsToUse};
-  font-size: clamp(36px, 4vw, 40px);
+  font-size: clamp(40px, 4vw, 44px);
   font-weight: bold;
   margin: 0;
   // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
