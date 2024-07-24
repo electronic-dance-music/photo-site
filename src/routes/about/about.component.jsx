@@ -105,9 +105,9 @@ const TrailImage = styled.div`
 
 const About = () => {
   const trailImages = [
-    { url: `${process.env.PUBLIC_URL}/about/trail1.jpg`, posX: 50, posY: 60 },
+    { url: `${process.env.PUBLIC_URL}/about/trail1.JPG`, posX: 50, posY: 60 },
     { url: `${process.env.PUBLIC_URL}/about/trail2.jpeg`, posX: 50, posY: 50 },
-    { url: `${process.env.PUBLIC_URL}/about/trail3.jpg`, posX: 50, posY: 50 },
+    { url: `${process.env.PUBLIC_URL}/about/trail3.JPG`, posX: 50, posY: 50 },
     { url: `${process.env.PUBLIC_URL}/about/trail4.jpeg`, posX: 50, posY: 50 },
     { url: `${process.env.PUBLIC_URL}/about/trail5.jpeg`, posX: 50, posY: 50 },
     { url: `${process.env.PUBLIC_URL}/about/trail6.jpg`, posX: 50, posY: 30 },
