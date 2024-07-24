@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a7493b71.css",
-    "main.js": "/static/js/main.44715536.js",
+    "main.js": "/static/js/main.78abab1e.js",
     "static/js/453.32cb4076.chunk.js": "/static/js/453.32cb4076.chunk.js",
     "static/media/brand-icons.svg": "/static/media/brand-icons.6729d29753e000c17489.svg",
     "static/media/icons.svg": "/static/media/icons.62d9dae4e0040e81c980.svg",
@@ -29,11 +29,11 @@
     "static/media/spectral-vietnamese-300-normal.woff": "/static/media/spectral-vietnamese-300-normal.de4156053222ac9ef3ac.woff",
     "index.html": "/index.html",
     "main.a7493b71.css.map": "/static/css/main.a7493b71.css.map",
-    "main.44715536.js.map": "/static/js/main.44715536.js.map",
+    "main.78abab1e.js.map": "/static/js/main.78abab1e.js.map",
     "453.32cb4076.chunk.js.map": "/static/js/453.32cb4076.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a7493b71.css",
-    "static/js/main.44715536.js"
+    "static/js/main.78abab1e.js"
   ]
 }
