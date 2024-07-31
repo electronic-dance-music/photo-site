@@ -1,8 +1,21 @@
-from os import walk
+from os import walk,path
 
-folderName = input("Type the folder name: ")
-title = input("Enter a great title: ")
-subtitle = input("Enter a subtitle: ")
+#inputs
+folderName = ""
+title = ""
+subtitle = ""
+while True:
+    folderName = input("Type the folder name: ")
+    if folderName != "" and path.exists(path.join("./",folderName)):
+        break
+    else:
+        print("Can't find a folder with that name...")
+while True:
+    title = input("Enter a great title: ")
+    if title != "": break
+while True:
+    subtitle = input("Enter a subtitle: ")
+    if subtitle != "": break
 
 output = '{\n\
     "title": "'+title+'",\n\
