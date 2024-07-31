@@ -1,6 +1,9 @@
 from os import walk,path
 
 #inputs
+folderName = ""
+title = ""
+subtitle = ""
 while True:
     folderName = input("Type the folder name: ")
     if folderName != "" and path.exists(path.join("./",folderName)):
