@@ -1,15 +1,9 @@
 [
     {
-        "folder": "andy+jodie",
-        "coverImage": "Andy Jodie Ring Pops-3.jpg",
-        "title": "Andy + Jodie",
-        "subtitle": "Baton Rouge, LA"
-    },
-    {
-        "folder": "george",
-        "coverImage": "GEORGIO-8.jpg",
-        "title": "George",
-        "subtitle": "Baton Rouge, LA"
+        "folder": "eve+william",
+        "coverImage": "eve_and_billy_website-163.jpg",
+        "title": "Eve + William",
+        "subtitle": "Greenville, SC"
     },
     {
         "folder": "avereigh+ethan",
@@ -18,9 +12,21 @@
         "subtitle": "Albany, LA"
     },
     {
+        "folder": "george",
+        "coverImage": "GEORGIO-8.jpg",
+        "title": "George",
+        "subtitle": "Baton Rouge, LA"
+    },
+    {
         "folder": "marie+miley",
         "coverImage": "Marie_Miley_Website-01.jpg",
         "title": "Marie + Miley",
+        "subtitle": "Baton Rouge, LA"
+    },
+    {
+        "folder": "andy+jodie",
+        "coverImage": "Andy Jodie Ring Pops-3.jpg",
+        "title": "Andy + Jodie",
         "subtitle": "Baton Rouge, LA"
     }
 ]
